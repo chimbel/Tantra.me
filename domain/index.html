@@ -163,6 +163,7 @@
 				document.getElementById("status-msg").innerHTML = "The domain name <b>" + response['dn'] + '</b> is for sale, you can buy it now for $69 only.'
 				document.getElementById("cta-text").innerHTML = response['cta-text']
 				document.getElementById("cta-link").setAttribute("href", response['cta-link'])
+				document.getElementById("cta-link2").setAttribute("href", response['cta-link2'])
 			} else {
 				document.getElementById("contact").style.display = "none"
 				document.getElementById("status-msg").className = 'alert alert-warning'
