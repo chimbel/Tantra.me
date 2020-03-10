@@ -34,7 +34,11 @@
 
 	var params = getUrlVars();
 	if(params.hasOwnProperty('q')) {
-		fetchAsync('https://go.' +  window.location.hostname.split('.').slice(-2).join('.') + '/dn?q=' + params['q'])
+		url = 'https://go.' +  window.location.hostname.split('.').slice(-2).join('.') + '/dn?q=' + params['q']
+		if(params.hasOwnProperty('buy')) {
+			url += '&dan=buy'
+		}
+		fetchAsync(url)
 		//fetchAsync('https://go.netcharm.com/dn?q=' + params['q'])
 		//fetchAsync('http://localhost:5000/go?q=' + params['q'])
 
