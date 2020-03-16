@@ -54,31 +54,38 @@
 
 <p>
 
+	<div id="paypal-button"></div>
+
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
-<div id="paypal-button"></div>
-
 <script>
-  paypal.Button.render({
-    env: 'sandbox', // Or 'production'
-    payment: function(data, actions) {
-      return actions.request.post('https//go.tantra.me/payment-create')
-        .then(function(res) {
-          return res.paymentId;
-        });
-    },
-    onAuthorize: function(data, actions) {
-      // 2. Make a request to your server
-      return actions.request.post('https//go.tantra.me/payment-execute', {
-        paymentID: data.paymentId,
-        payerID:   data.payedId
-      })
-        .then(function(res) {
-        	console.log(res)
-          // 3. Show the buyer a confirmation message.
-        });
-    }
-  }, '#paypal-button');
+    var CREATE_PAYMENT_URL  = 'https//go.tantra.me/payment-create';
+    var EXECUTE_PAYMENT_URL = 'https//go.tantra.me/payment-execute';
+
+    paypal.Button.render({
+
+        env: 'sandbox', // Or 'sandbox'
+
+        commit: true, // Show a 'Pay Now' button
+
+        payment: function() {
+            return paypal.request.post(CREATE_PAYMENT_URL).then(function(data) {
+                return data.paymentId;
+            });
+        },
+
+        onAuthorize: function(data) {
+            return paypal.request.post(EXECUTE_PAYMENT_URL, {
+                paymentID: data.paymentId,
+                payerID:   data.payerId
+            }).then(function(res) {
+                console.log(res.success)
+                // The payment is complete!
+                // You can now show a confirmation message to the customer
+            });
+        }
+
+    }, '#paypal-button');
 </script>
 
 </p>
