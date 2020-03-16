@@ -54,38 +54,6 @@
 
 	<div id="paypal-button"></div>
 
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
-
-<script>
-    var CREATE_PAYMENT_URL  = 'https://go.tantra.me/payment-create';
-    var EXECUTE_PAYMENT_URL = 'https://go.tantra.me/payment-execute';
-
-    paypal.Button.render({
-
-        env: 'sandbox', // Or 'sandbox'
-
-        commit: true, // Show a 'Pay Now' button
-
-        payment: function() {
-            return paypal.request.post(CREATE_PAYMENT_URL).then(function(data) {
-                return data.paymentId;
-            });
-        },
-
-        onAuthorize: function(data) {
-            return paypal.request.post(EXECUTE_PAYMENT_URL, {
-                paymentID: data.paymentId,
-                payerID:   data.payerId
-            }).then(function(res) {
-                console.log(res.success)
-                // The payment is complete!
-                // You can now show a confirmation message to the customer
-            });
-        }
-
-    }, '#paypal-button');
-</script>
-
 
 						</div>
 					</div>
@@ -154,6 +122,8 @@
 
 
 
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1944294-8"></script>
   <script>
 
@@ -186,14 +156,46 @@
 	function handle_response(response) {
 			if(response.hasOwnProperty('dn')) {
 				var params = getUrlVars();
-				document.getElementById("contact").style.display = ""
 				document.getElementById("domain-title").innerHTML = response['dn']
 				document.getElementById("status-msg").innerHTML = "The domain name <b>" + response['dn'] + '</b> is for sale, you can buy it now for $69 only.'
+
+
+    var CREATE_PAYMENT_URL  = 'https://go.tantra.me/payment-create';
+    var EXECUTE_PAYMENT_URL = 'https://go.tantra.me/payment-execute';
+
+    paypal.Button.render({
+
+        env: 'sandbox', // Or 'sandbox'
+
+        commit: true, // Show a 'Pay Now' button
+
+        payment: function() {
+            return paypal.request.post(CREATE_PAYMENT_URL, {'item' : response['dn'] }).then(function(data) {
+                return data.paymentId;
+            });
+        },
+
+        onAuthorize: function(data) {
+            return paypal.request.post(EXECUTE_PAYMENT_URL, {
+                paymentID: data.paymentId,
+                payerID:   data.payerId
+            }).then(function(res) {
+                console.log(res.success)
+                // The payment is complete!
+                // You can now show a confirmation message to the customer
+            });
+        }
+
+    }, '#paypal-button');
+
+    				document.getElementById("contact").style.display = ""
 
 				  window.dataLayer = window.dataLayer || [];
 				  function gtag(){dataLayer.push(arguments);}
 				  gtag('js', new Date());
 				  gtag('config', 'UA-1944294-8');
+
+
 
 			} else {
 				document.getElementById("status-msg").className = 'alert alert-warning'
