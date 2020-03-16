@@ -95,13 +95,17 @@
 
 			<section class="featured-area text-center">
 				<div class="container">
+
+					<h5>
+						How does it work!
+					</h5>
+
 					<div class="row">
 						<div class="col-md-4">
 							<div class="single-feature d-flex flex-wrap justify-content-between">
 
 								<div class="desc">
-									<p><span style="font-size:1.3rem" class="lnr lnr-thumbs-up"></span> Accepting Paypal and ensuring a secure and fast payment experience</p>
-									<a href="../transact.html">Learn More</a>
+									<p><span style="font-size:1.2rem" class="lnr lnr-cart"></span> Buy using Paypal ensuring a safe and smooth transaction</p>
 								</div>
 							</div>
 						</div>
@@ -109,8 +113,7 @@
 							<div class="single-feature d-flex flex-wrap justify-content-between">
 
 								<div class="desc">
-									<p><span style="font-size:1.3rem" class="lnr lnr-history"></span> Get started with your domain within 24 hours from purchase</p>
-									<a href="../transact.html">Learn More</a>
+									<p><span style="font-size:1.2rem" class="lnr lnr-bubble"></span> Follow instructions to accept the domain transfer</p>
 								</div>
 							</div>
 						</div>
@@ -118,8 +121,7 @@
 							<div class="single-feature d-flex flex-wrap justify-content-between">
 
 								<div class="desc">
-									<p><span style="font-size:1.3rem" class="lnr lnr-heart"></span> Experienced & professional team dealing with sold 1M+ domains</p>
-									<a href="../transact.html">Learn More</a>
+									<p><span style="font-size:1.2rem" class="lnr lnr-smile"></span> Start using your domain within 24 hours from purchase</p>
 								</div>
 							</div>
 						</div>
@@ -209,12 +211,12 @@
 
 	function handle_error(err) {
 			console.log(err)
-			document.getElementById("status-msg").innerHTML = 'Our server is down at the moment! Please try again later.'
+			document.getElementById("status-msg").innerHTML = 'Our server is down at the moment! Please try again later or contact <b>support@tantra.me</b>'
 			document.getElementById("status-msg").className = 'alert alert-danger'
 	}
 
 	function payment_error() {
-					document.getElementById("status-msg").innerHTML = 'You payment attempt has failed! Please try again....'
+					document.getElementById("status-msg").innerHTML = 'You payment attempt has failed! Please try again later or contact <b>support@tantra.me</b>'
 					document.getElementById("status-msg").className = 'alert alert-danger'
 
 	}
