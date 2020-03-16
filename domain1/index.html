@@ -170,7 +170,9 @@
         commit: true, // Show a 'Pay Now' button
 
         payment: function() {
-            return paypal.request.post(CREATE_PAYMENT_URL, {'item' : response['dn'] }).then(function(data) {
+            return paypal.request.post(CREATE_PAYMENT_URL, {
+                item: response['dn']
+            }).then(function(data) {
                 return data.paymentId;
             });
         },
