@@ -2388,21 +2388,6 @@ nav a:hover {
   color: red;
 }
 
-@media (max-width: 767px) {
-  .subscription input {
-    padding: 0 25px;
-  }
-  .subscription .primary-btn {
-    top: 120%;
-    transform: translate(50%, 0);
-    right: 50%;
-    width: 170px;
-  }
-  .subscription .info {
-    top: 110px;
-  }
-}
-
 .footer-area {
   background: #333333;
   padding: 100px 0;
