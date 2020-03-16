@@ -22,8 +22,6 @@
 		<link rel="stylesheet" href="../css/bootstrap.css">
 		<link rel="stylesheet" href="../css/main.css">
 
-	<script src="https://www.paypal.com/sdk/js?client-id=ASbwx5Vl7skD4Fg7L7K5AmrQqrLyuw_k-pQqfsbzddgMVB5A1L5fOw10DtvldqPzUgdTnD1xBkHKuaLr"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
-  	</script>
 
 	</head>
 	<body>
@@ -56,41 +54,31 @@
 
 <p>
 
-<div id="paypal-button-container"></div>
-<script>
-var CREATE_PAYMENT_URL = '/paypal/create-payment';
-var EXECUTE_PAYMENT_URL = '/paypal/execute-payment/';
-paypal.Button.render({
-env: 'sandbox', // sandbox | production
-// Show the buyer a 'Pay Now' button in the checkout flow
-commit: true,
-// payment() is called when the button is clicked
-payment: function() {
-return paypal.request.post(CREATE_PAYMENT_URL).then(function(data) {
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
-//console.log(" ID del pago retornado: " + data);
-console.log(CREATE_PAYMENT_URL);
-return data.id;
-});
-},
-// onAuthorize() is called when the buyer approves the payment
-onAuthorize: function(data) {
-return paypal.request.post(EXECUTE_PAYMENT_URL, {
-paymentID: data.paymentID,
-payerID: data.payerID
-}).then(function() {
-// The payment is complete!
-// You can now show a confirmation message to the customer
-alert("Felicidades! El pago fue realizado.");
-}).catch(function(err) {
-console.log(err);
-});
-console.log(" Data " + data);
-},
-onCancel: function(data, actions) {
-return actions.redirect();
-}
-}, '#paypal-button-container');
+<div id="paypal-button"></div>
+
+<script>
+  paypal.Button.render({
+    env: 'sandbox', // Or 'production'
+    payment: function(data, actions) {
+      return actions.request.post('https//go.tantra.me/payment-create')
+        .then(function(res) {
+          return res.paymentId;
+        });
+    },
+    onAuthorize: function(data, actions) {
+      // 2. Make a request to your server
+      return actions.request.post('https//go.tantra.me/payment-execute', {
+        paymentID: data.paymentId,
+        payerID:   data.payedId
+      })
+        .then(function(res) {
+        	console.log(res)
+          // 3. Show the buyer a confirmation message.
+        });
+    }
+  }, '#paypal-button');
 </script>
 
 </p>
