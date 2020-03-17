@@ -2001,7 +2001,7 @@ nav a:hover {
 }
 
 .primary-btn:hover span {
-  color: #222222;
+  color: ghostwhite;
 }
 
 .primary-btn:hover:after {
@@ -2367,9 +2367,6 @@ nav a:hover {
   opacity: 1;
 }
 
-.subscription .primary-btn:hover .lnr {
-  right: 20px;
-}
 
 .subscription .info {
   position: absolute;
