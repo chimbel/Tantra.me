@@ -1216,7 +1216,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .ordered-list-roman li span {
   font-weight: 300;
-  color: #111;
+  color: #222;
 }
 
 .single-input {
@@ -2432,11 +2432,11 @@ nav a:hover {
 }
 
 .about-generic-area {
-  background: #fff;
+  background: ghostwhite;
 }
 
 .about-generic-area .border-top-generic {
-  padding: 10px 10px;
+  padding: 1.4rem 0 1.4rem 0;
 }
 
 .about-generic-area p {
