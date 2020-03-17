@@ -86,8 +86,8 @@ a, a:focus, a:hover {
 
 .alert-success {
     color: #642B73;
-    background-color: #fff;
-    border-color: #642B73;
+    background-color: ghostwhite;
+    border-color: ghostwhite;
 }
 
 .btn.active.focus,
