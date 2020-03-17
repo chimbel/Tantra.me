@@ -2228,7 +2228,7 @@ nav a:hover {
   background: url(../img/video-area-bg.jpg) no-repeat center center/cover;
 }
 
-.video-area .overlay-bg {
+.video-area .overlay-bg, .story-area .overlay-bg {
   background-image: -moz-radial-gradient(50% 50%, circle closest-side, #000 0%, #642B73 100%);
   background-image: -webkit-radial-gradient(50% 50%, circle closest-side, #000 0%, #642B73 100%);
   background-image: -ms-radial-gradient(50% 50%, circle closest-side, #000 0%, #642B73 100%);
@@ -2287,7 +2287,7 @@ nav a:hover {
 .story-area {
   padding: 40px 0;
   position: relative;
-  background-color: ghostwhite;
+  background: url(../img/video-area-bg.jpg) no-repeat center center/cover;
 }
 
 .story-area:after {
