@@ -232,7 +232,7 @@
 				document.getElementById("domain-title").innerHTML = response['dn']
 				document.getElementById("status-msg").innerHTML = "Great News! <b>" + response['dn'] + '</b> is for sale.'
 				document.getElementById("status-msg").className = 'alert alert-success'
-				document.getElementById("price").innerHTML = response['price']
+				document.getElementById("price").innerHTML = '$' + response['price']
 
     paypal.Button.render({
 
