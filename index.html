@@ -34,11 +34,19 @@
 
 						<div class="col-8">
 							<div id="mc_embed_signup">
-								<form novalidate action="domain/" method="get" class="subscription relative">
-									<input type="text" name="q" placeholder="eg. MyDomain.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter a domain name eg ILoveChicago.com'" required>
-									<button class="primary-btn"><span>Search</span><span class="lnr lnr-arrow-right"></span></button>
+								<form novalidate action="" method="get" class="subscription relative">
+									<input type="text" id="q" name="q" required>
+									<button class="primary-btn" style="width: 8%; height: 90%;"><span style="font-size:1.5rem" class="lnr lnr-magnifier"></span></button>
 									<div class="info"></div>
 								</form>
+								<script>
+								if (typeof(Storage) !== "undefined") {
+									searched_domain = window.localStorage.getItem('domain');
+									if (searched_domain !== "null") {
+										document.getElementById("q").value = searched_domain;
+									}
+								}
+								</script>
 							</div>
 						</div>
 					</div>
@@ -95,17 +103,17 @@
 									<div class="tab-pane fade show active" id="nav-history" role="tabpanel" aria-labelledby="nav-home-tab">
 										<div class="single-content">
 											<h3>1M+ Inventory</h3>
-											<p>Our inventory consists of over 1 million domain names fairly priced and ready for purchase. We use DAN.COM domain escrow service to ensure a smooth transaction.</p>
+											<p>Our inventory consists of over 1 million domain names fairly priced and ready for purchase.</p>
 										</div>
 									</div>
 									<div class="tab-pane fade" id="nav-mission" role="tabpanel" aria-labelledby="nav-profile-tab">
 										<p class="single-content">
 											<h3>Secure Transactions</h3>
 											<p>
-												We process transactions using DAN.COM domain escrow to ensure a safe buying experience.
+												We process transactions using Paypal to ensure a safe buying experience.
 												<p>
 												</p>
-												DAN.COM is a trusted domain escrow service accepting payments globally. To know more about secure transactions, <a href="transact.html">read our detailed domain escrow overview</a>.
+												Paypal accepts payments globally. To know more about our process, <a href="transact/">read our detailed guide</a>.
 
 										</p>
 										</div>
@@ -114,7 +122,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
 			</section>
 			<!-- End About Area -->
 			<!-- Start Amazing Works Area -->
@@ -139,7 +146,7 @@
 
 
 					<div class="footer-menu">
-							<a href="transact.html">Secure Transactions</a>
+							<a href="transact/">Secure Transactions</a>
 							<a href="index.html#about">About Us</a>
 						</div>
 						<div class="footer-social">
