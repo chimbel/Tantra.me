@@ -42,14 +42,7 @@
 									<button class="primary-btn" style="width: 8%; height: 90%;"><span style="font-size:1.5rem" class="lnr lnr-magnifier"></span></button>
 									<div class="info"></div>
 								</form>
-								<script>
-								if (typeof(Storage) !== "undefined") {
-									searched_domain = window.localStorage.getItem('domain');
-									if (searched_domain !== "null") {
-										document.getElementById("q").value = searched_domain;
-									}
-								}
-								</script>
+
 							</div>
 						</div>
 					</div>
@@ -289,11 +282,20 @@
 	}
 
 	var params = getUrlVars();
-	if(params.hasOwnProperty('q')) {
+
+
+	if(params.hasOwnProperty('q') && params['q'] != '') {
+		document.getElementById("q").value = params['q'];
 		fetchAsync(api_url + '/domain?q=' + params['q'])
 				.then(data => handle_response(data))
 				.catch(reason => handle_error(reason))
 	} else {
+		if (typeof(Storage) !== "undefined") {
+			searched_domain = window.localStorage.getItem('domain');
+			if (searched_domain !== "null") {
+				document.getElementById("q").value = searched_domain;
+			}
+		}
 		document.getElementById("status-msg").className = 'alert alert-warning'
 		document.getElementById("status-msg").innerHTML = 'Please type a valid input while searching for a domain.'
 	}
