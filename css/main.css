@@ -2353,13 +2353,12 @@ nav a:hover {
   top: 50%;
   transform: translateY(-50%);
   right: 5px;
-  padding: 0 55px 0 30px;
 }
 
 .subscription .primary-btn .lnr {
   position: absolute;
   top: 12px;
-  right: 30px;
+  right: 18px;
   font-weight: 700;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
