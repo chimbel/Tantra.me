@@ -71,7 +71,7 @@
 									 Order Date : <span style="font-weight:500; color:black" id="order-date" class="label label-success">27 Dec 2020</span><br>
 										Order Id :  <span style="font-weight:500; color:black" id="order-id"></span><br>
 								 	Item : <span style="font-weight:500; color:black" id="domain-name" class="label label-success"></span><br>
-									Amount : <span style="font-weight:500; color:black" id="payment-email" class="label label-success">$69 (Paid via Paypal email : )</span>
+									Amount : <span style="font-weight:500; color:black" id="payment-email" class="label label-success"></span>
 						</div>
 
 					<div class="alert alert-success" id="status-msg" role="alert">
@@ -215,6 +215,8 @@
 
 				if(response.hasOwnProperty('dn')) {
 						document.getElementById("order-id").innerHTML = response['id']
+						document.getElementById("payment-email").innerHTML = '$69 (paid via Paypal : ' + response['email'] + ')'
+						document.getElementById("order-date").innerHTML = response['create_time'].replace('T',' ').replace('Z','')
 						document.getElementById("domain-name").innerHTML = response['dn']
 	    				document.getElementById("order-confirm").style.display = ""
 	    				document.getElementById("step1").className = 'lnr lnr-checkmark-circle'
