@@ -103,19 +103,17 @@
 					<div class="row justify-content-md-center">
 						<div class="col-md-3 col-sm-6 col-6">
 								<div class="desc">
-									<p><span style="font-size:1.2rem" class="lnr lnr-cart"></span> 1. Buy now with Paypal for a safe & easy experience</p>
+									<p><span style="font-size:1.2rem" class="lnr lnr-cart"></span> 1. Buy now with Paypal for a safe, secure & easy experience</p>
 								</div>
 						</div>
 						<div class="col-md-3 col-sm-6 col-6">
 								<div class="desc">
-									<p><span style="font-size:1.2rem" class="lnr lnr-envelope"></span> 2. Our support will guide with ownership transfer</p>
+									<p><span style="font-size:1.2rem" class="lnr lnr-envelope"></span> 2. A transfer agent will provide guidance with ownership transfer</p>
 								</div>
 						</div>
 						<div class="col-md-3 col-sm-6 col-6">
 								<div class="desc">
-									<p><span style="font-size:1.2rem" class="lnr lnr-smile"></span> 3. Start using your new domain within 48 hours
-
-									</p>
+									<p><span style="font-size:1.2rem" class="lnr lnr-smile"></span> 3. Start using your new domain within 48 hours</p>
 							</div>
 						</div>
 
@@ -216,9 +214,8 @@
 	}
 
 	function payment_error() {
-					document.getElementById("status-msg").innerHTML = 'You payment attempt has failed! Please try again later or contact <b>support@tantra.me</b>'
-					document.getElementById("status-msg").className = 'alert alert-danger'
-
+		document.getElementById("status-msg").innerHTML = 'You payment attempt has failed! Please try again later or contact <b>support@tantra.me</b>'
+		document.getElementById("status-msg").className = 'alert alert-danger'
 	}
 
 	function handle_response(response) {
@@ -229,8 +226,14 @@
 				}
 
 				var params = getUrlVars();
+				console.log(params)
 				document.getElementById("domain-title").innerHTML = response['dn']
-				document.getElementById("status-msg").innerHTML = "Great News! <b>" + response['dn'] + '</b> is for sale.'
+
+				if(params.hasOwnProperty('rebrand')) {
+					document.getElementById("status-msg").innerHTML = "On Mar 17 we rebranded to <b>Tantra.me</b> - Tantra Media, we now accept payments via this website"
+				} else {
+					document.getElementById("status-msg").innerHTML = "Great News! <b>" + response['dn'] + '</b> is for sale.'
+				}
 				document.getElementById("status-msg").className = 'alert alert-success'
 				document.getElementById("price").innerHTML = '$' + response['price']
 
