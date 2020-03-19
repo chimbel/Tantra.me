@@ -57,8 +57,8 @@
 
 				<div class="row justify-content-md-center">
 					<div class="col-md-8">
-					<div class="msg msg-info text-center" id="status-msg" role="msg">
-						Howdy! Please wait while we process your request...
+					<div class="msg msg-magick text-center" id="status-msg" role="msg">
+						<span class="lnr lnr-hourglass"></span> Howdy! Please wait while we process your request...
 					</div>
 					</div>
 				</div>
@@ -210,13 +210,13 @@
 
 	function handle_error(err) {
 			document.getElementById("status-msg").style.display = ""
-			document.getElementById("status-msg").innerHTML = 'Our server is down at the moment! Please try again later or contact <b>support@tantra.me</b>'
+			document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> Our server is down at the moment! Please try again later or contact <b>support@tantra.me</b>'
 			document.getElementById("status-msg").className = 'msg msg-danger  text-center'
 	}
 
 	function payment_error() {
 		document.getElementById("status-msg").style.display = ""
-		document.getElementById("status-msg").innerHTML = 'You payment attempt has failed! Please try again later or contact <b>support@tantra.me</b>'
+		document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> You payment attempt has failed! Please try again later or contact <b>support@tantra.me</b>'
 		document.getElementById("status-msg").className = 'msg msg-danger  text-center'
 	}
 
@@ -233,8 +233,8 @@
 
 				if(params.hasOwnProperty('rebrand')) {
 					document.getElementById("status-msg").style.display = ""
-					document.getElementById("status-msg").className = 'msg msg-magick text-center'
-					document.getElementById("status-msg").innerHTML = "On Mar 17 we rebranded to <b>Tantra.me</b> - Tantra Media, we now accept Paypal on our website"
+					document.getElementById("status-msg").className = 'msg msg-info text-center'
+					document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-chevron-right-circle"></span> On Mar 17 we rebranded to <b>Tantra.me</b> - Tantra Media, we now accept Paypal on our website'
 					document.getElementById("forsale").innerHTML = "The domain name <br><b style='color:#fff'>" + response['dn'] + '</b><br> is for sale'
 				} else {
 					document.getElementById("status-msg").style.display = "none"
@@ -290,7 +290,7 @@
 			} else {
 				document.getElementById("status-msg").style.display = ""
 				document.getElementById("status-msg").className = 'msg msg-warning'
-				document.getElementById("status-msg").innerHTML = "We could not find any result matching your query <b>" + response['q'] + '</b>, please search again.'
+				document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> We could not find any result matching your query <b>' + response['q'] + '</b>, please search again.'
 			}
 	}
 
@@ -311,7 +311,7 @@
 		}
 		document.getElementById("status-msg").style.display = ""
 		document.getElementById("status-msg").className = 'msg msg-warning'
-		document.getElementById("status-msg").innerHTML = 'Please type a valid input while searching for a domain.'
+		document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> Please type a valid input while searching for a domain.'
 	}
 </script>
 	<script src="../js/vendor/jquery-2.2.4.min.js"></script>
