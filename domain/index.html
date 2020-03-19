@@ -296,8 +296,8 @@
 
 	var params = getUrlVars();
 
-
-	if(params.hasOwnProperty('q') && params['q'] != '') {
+	target = '.dbz'
+	if(params.hasOwnProperty('q') && params['q'] != '' && params['q'].substring(params['q'].length-target.length) != target) {
 		document.getElementById("q").value = params['q'];
 		fetchAsync(api_url + '/domain?q=' + params['q'])
 				.then(data => handle_response(data))
