@@ -209,7 +209,7 @@
 
 				if(response.hasOwnProperty('dn')) {
 						document.getElementById("order-id").innerHTML = response['id']
-						document.getElementById("payment-email").innerHTML = '$69 (paid via Paypal : ' + response['email'] + ')'
+						document.getElementById("payment-email").innerHTML = 'Paid via Paypal : ' + response['email']
 						document.getElementById("order-date").innerHTML = response['create_time'].replace('T',' ').replace('Z','')
 						document.getElementById("domain-name").innerHTML = response['dn']
 	    				document.getElementById("order-confirm").style.display = ""
