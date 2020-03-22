@@ -58,7 +58,9 @@
 				</div>
 			</section>
 
-			<section id="order-confirm" class="about-generic-area" style="display:none">
+			<section id="order-confirm" class="story-area" style="display:none">
+
+				<div class="overlay overlay-bg"></div>
 
 				<div class="container border-top-generic">
 
@@ -66,26 +68,69 @@
 
 					<div class="col-md-8">
 
-					<div class="card card-body bg-white">
 
-									 Order Date : <span style="font-weight:500; color:black" id="order-date" class="label label-success">27 Dec 2020</span><br>
-										Order Id :  <span style="font-weight:500; color:black" id="order-id"></span><br>
-								 	Item : <span style="font-weight:500; color:black" id="domain-name" class="label label-success"></span><br>
-									Amount : <span style="font-weight:500; color:black" id="payment-email" class="label label-success"></span>
+
+
+					<div class="msg msg-magick" id="status-msg" role="msg">
+
+										<div class="single-content">
+
+											<p class="single-content">
+											<span class="lnr lnr-checkmark-circle" style="color:green"></span> Your payment has been received, here is your order summary
+
+
+											<div class="row">
+												  <div class="col-md-3 col-3 col-sm-3 text-right">Order Date :</div>
+												  <div class="col-md-9 col-9 col-sm-9 text-left"><span style="font-weight:500; color:black" id="order-date" class="label label-success"></span></div>
+											</div>
+
+											<div class="row">
+												  <div class="col-md-3 col-3 col-sm-3 text-right">Order Id :</div>
+												  <div class="col-md-9 col-9 col-sm-9 text-left"><span style="font-weight:500; color:black" id="order-id"></span></div>
+
+											</div>
+
+											<div class="row">
+												  <div class="col-md-3 col-3 col-sm-3 text-right">Item :</div>
+												  <div class="col-md-9 col-9 col-sm-9 text-left"><span style="font-weight:500; color:black" id="domain-name" class="label label-success"></span></div>
+
+											</div>
+
+											<div class="row">
+
+												  <div class="col-md-3 col-3 col-sm-3 text-right">Amount :</div>
+												  <div class="col-md-9 col-9 col-sm-9 text-left"><span style="font-weight:500; color:black" id="payment-email" class="label label-success"></span></div>
+
+											</div>
+
+											</p>
+
+										<p class="single-content">
+
+											We require your Dynadot.com <b style="color:#000; font-weight:500">forum name</b> to initiate the domain ownership transfer to you, to know more about how this process works, <a href="#transfer-info">please read our detailed guide</a>.
+
+
+
+
+										</p>
+
+										</div>
+
+								</div>
+
+
 						</div>
 
-					<div class="alert alert-success text-center" id="status-msg" role="alert">
-						<b>Order Status</b> : You have completed steps 1 out of 2, please proceed with step 2, read the instructions carefully, if you have any queries email : info@tantra.me with your Order Id
-					</div>
+
+
 					</div>
 				</div>
 
-					</div>
 			</section>
 
 			<section class="about-generic-area">
 					<div class="container border-top-generic">
-					<h4 class="about-title"><span id="step1" class="lnr lnr-arrow-right-circle" style="color:lightgrey"></span> Step 1 : Buying a domain name</h4>
+					<h4 class="about-title"><span id="step1" class="lnr lnr-arrow-right-circle" style="color:lightgrey"></span> Step 1 : Purchasing a domain name</h4>
 					<div class="row">
 
 						<div class="col-md-12">
@@ -103,7 +148,7 @@
 					</div>
 				</div>
 
-				<div class="container border-top-generic">
+				<div id="transfer-info" class="container border-top-generic">
 					<h4 class="about-title"><span id="step2" class="lnr lnr-arrow-right-circle" style="color:lightgrey"></span> Step 2 : Gaining ownership of a purchased domain name</h4>
 					<div class="row">
 						<div class="col-md-12"><ol class="ordered-list-roman">
@@ -209,12 +254,10 @@
 
 				if(response.hasOwnProperty('dn')) {
 						document.getElementById("order-id").innerHTML = response['id']
-						document.getElementById("payment-email").innerHTML = '$' + response['price'] +  ' (paid via Paypal : ' + response['email'] + ')'
+						document.getElementById("payment-email").innerHTML = '$' + response['price'] +  ' (via Paypal)'
 						document.getElementById("order-date").innerHTML = response['create_time'].replace('T',' ').replace('Z','')
 						document.getElementById("domain-name").innerHTML = response['dn']
 	    				document.getElementById("order-confirm").style.display = ""
-	    				document.getElementById("step1").className = 'lnr lnr-checkmark-circle'
-	    				document.getElementById("step1").style.color = 'green'
 				}
 
 	}
