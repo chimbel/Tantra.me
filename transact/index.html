@@ -76,7 +76,7 @@
 										<div class="single-content">
 
 											<p class="single-content">
-											<span class="lnr lnr-checkmark-circle" style="color:green"></span> Your payment has been received, here is your order summary
+											<span class="lnr lnr-checkmark-circle" style="color:green"></span> Your payment has been received, please find the order summary below
 
 
 											<div class="row">
@@ -92,7 +92,7 @@
 
 											<div class="row">
 												  <div class="col-md-3 col-3 col-sm-3 text-right">Item :</div>
-												  <div class="col-md-9 col-9 col-sm-9 text-left"><span style="font-weight:500; color:black" id="domain-name" class="label label-success"></span></div>
+												  <div class="col-md-9 col-9 col-sm-9 text-left"><span style="font-weight:500; color:black" id="order-item" class="label label-success"></span></div>
 
 											</div>
 
@@ -107,7 +107,7 @@
 
 										<p class="single-content">
 
-											We require your Dynadot.com <b style="color:#000; font-weight:500">forum name</b> to initiate the domain ownership transfer to you, to know more about how this process works, <a href="#transfer-info">please read our detailed guide</a>.
+											<span class="lnr lnr-arrow-right-circle" style="color:green"></span> We require your Dynadot.com <b style="color:#000; font-weight:500">forum name</b> to initiate the domain ownership transfer to you, to know more about how this process works, <a href="#transfer-info">please read our detailed guide</a>.
 
 
 
@@ -130,7 +130,7 @@
 
 			<section class="about-generic-area">
 					<div class="container border-top-generic">
-					<h4 class="about-title"><span id="step1" class="lnr lnr-arrow-right-circle" style="color:lightgrey"></span> Step 1 : Purchasing a domain name</h4>
+					<h4 class="about-title"><span id="step1" class="lnr lnr-chevron-right" style="color:lightgrey"></span> Step 1 : Purchasing a domain name</h4>
 					<div class="row">
 
 						<div class="col-md-12">
@@ -149,7 +149,7 @@
 				</div>
 
 				<div id="transfer-info" class="container border-top-generic">
-					<h4 class="about-title"><span id="step2" class="lnr lnr-arrow-right-circle" style="color:lightgrey"></span> Step 2 : Gaining ownership of a purchased domain name</h4>
+					<h4 class="about-title"><span id="step2" class="lnr lnr-chevron-right" style="color:lightgrey"></span> Step 2 : Gaining ownership of a purchased domain name</h4>
 					<div class="row">
 						<div class="col-md-12"><ol class="ordered-list-roman">
 									<li><span>Domains are managed at Dynadot.com, to transfer ownership of a purchased domain name, a Dynadot.com account will be needed, if the buyer does not have one, a new free account can be created, to know more about account creation : <a target="_blank" href="https://www.dynadot.com/community/help/question/sign-up">How do I create a Dynadot.com account?</a></span>
@@ -256,7 +256,7 @@
 						document.getElementById("order-id").innerHTML = response['id']
 						document.getElementById("payment-email").innerHTML = '$' + response['price'] +  ' (via Paypal)'
 						document.getElementById("order-date").innerHTML = response['create_time'].replace('T',' ').replace('Z','')
-						document.getElementById("domain-name").innerHTML = response['dn']
+						document.getElementById("order-item").innerHTML = response['dn']
 	    				document.getElementById("order-confirm").style.display = ""
 				}
 
