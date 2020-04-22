@@ -88,6 +88,7 @@
 
 						<span id="discount" style="display:none">
 
+
 						</span>
 
 							</p>
@@ -249,7 +250,7 @@
 
 				if(response.hasOwnProperty('discount')) {
 					document.getElementById("discount").style.display = ""
-					document.getElementById("discount").innerHTML = response['discount']
+					document.getElementById("discount").innerHTML = "<br>" + response['discount']
 				}
 
 
