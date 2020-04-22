@@ -86,6 +86,10 @@
 
 						</span>
 
+						<span id="discount" class="discount" >
+
+						</span>
+
 							</p>
 								<div id="paypal-button"></div>
 
@@ -242,6 +246,11 @@
 				}
 
 				document.getElementById("price").innerHTML = '$' + response['price']
+
+				if(response.hasOwnProperty('discount')) {
+					document.getElementById("discount").innerHTML = response['discount']
+				}
+
 
     paypal.Button.render({
 
