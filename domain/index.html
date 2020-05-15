@@ -79,7 +79,10 @@
 							<p>
 
 					  <del>
-						<span style="font-size: 1.8em; font-weight: 200; color:lightgrey">$100</span>
+						  <span id="downsell" class="downsell" >
+
+						</span>
+
 					  </del>
 
 						<span id="price" class="price" >
@@ -249,6 +252,9 @@
 				document.getElementById("price").innerHTML = '$' + response['price']
 
 				if(response.hasOwnProperty('discount')) {
+					document.getElementById("downsell").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
+					document.getElementById("downsell").innerHTML = '$' + response['downsell']
+
 					document.getElementById("discount").style.display = ""
 					document.getElementById("discount").innerHTML = '<br><span class="lnr lnr-tag"></span> ' + response['discount']
 				}
