@@ -259,6 +259,12 @@
 					document.getElementById("discount").innerHTML = '<br><span class="lnr lnr-tag"></span> ' + response['discount']
 				}
 
+				create_pay_data = {
+	                item: response['dn']
+	            }
+				if(params.hasOwnProperty('promo')) {
+					create_pay_data['promo'] = params['promo']
+				}
 
     paypal.Button.render({
 
@@ -277,9 +283,7 @@
         commit: true, // Show a 'Pay Now' button
 
         payment: function() {
-            return paypal.request.post(api_url + '/payment-create', {
-                item: response['dn']
-            }).then(function(data) {
+            return paypal.request.post(api_url + '/payment-create', create_pay_data).then(function(data) {
 	            console.log(data);
                 return data.i;
             }).catch(err => payment_error());
@@ -315,8 +319,15 @@
 
 	target = '.dbz'
 	if(params.hasOwnProperty('q') && params['q'] != '' && params['q'].substring(params['q'].length-target.length) != target) {
+
+		final_url = api_url + '/domain?q=' + params['q']
 		document.getElementById("q").value = params['q'];
-		fetchAsync(api_url + '/domain?q=' + params['q'])
+
+		if(params.hasOwnProperty('promo')) {
+				final_url = final_url + '&promo=' + params['promo']
+		}
+
+		fetchAsync(final_url)
 				.then(data => handle_response(data))
 				.catch(reason => handle_error(reason))
 	} else {
