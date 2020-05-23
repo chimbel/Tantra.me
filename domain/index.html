@@ -78,13 +78,13 @@
 					<p>
 
 					  <del>
-						  <span id="downsell" class="downsell" >
+						  <span id="price" class="price" >
 
 						</span>
 
 					  </del>
 
-						<span id="price" class="price" >
+						<span id="bin" class="bin" >
 
 						</span>
 
@@ -327,22 +327,22 @@ async function fetchAsyncPOST (url, req_data) {
 				document.getElementById("forsale").innerHTML = "The domain name <br><b style='color:#fff'>" + response['dn'] + '</b><br> is for sale'
 
 
-				document.getElementById("price").innerHTML = '$' + response['price']  + ' US'
+				document.getElementById("bin").innerHTML = '$' + response['bin']  + ' US'
 
 				if(response.hasOwnProperty('discount')) {
-					document.getElementById("downsell").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
-					document.getElementById("downsell").innerHTML = '$' + response['downsell']  + ' US'
+					document.getElementById("price").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
+					document.getElementById("price").innerHTML = '$' + response['price']  + ' US'
 
 					document.getElementById("discount").style.display = ""
 					document.getElementById("discount").innerHTML = '<br><span class="lnr lnr-tag"></span> ' + response['discount']
 				}
 
-				document.getElementById("hide-offer-box").innerHTML = 'buy now for $' + response['price']
+				document.getElementById("hide-offer-box").innerHTML = 'buy now for $' + response['bin']
 				document.getElementById("bin-agreement-terms").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> I agree to purchase this domain for $' + response['price']
 				document.getElementById("min-agreement-terms").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> I agree to purchase this domain for the amount'
 
 
-				document.getElementsByName("offer")[0].value = response['price']
+				document.getElementsByName("offer")[0].value = response['bin']
 
 				document.getElementById("buynow-link").style.display = ""
 				document.getElementById("buynow-link").href = web_url + '/marketplace?q=' + response['dn']
@@ -419,14 +419,6 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 	  var name = document.getElementsByName('name')[0].value;
 
 	  var submit = true
-
-	  if (offer < 70) {
-	  submit = false
-		document.getElementById("form-offer-validate").style = "color:red"
-		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer above $70'
-	  } else {
-	  	document.getElementById("form-offer-validate").style.display = "none"
-	  }
 
 	if(ValidateEmail(email) === false) {
 		  submit = false

@@ -79,13 +79,13 @@
 							<p>
 
 					  <del>
-						  <span id="downsell" class="downsell" >
+						  <span id="price" class="price" >
 
 						</span>
 
 					  </del>
 
-						<span id="price" class="price" >
+						<span id="bin" class="bin" >
 
 						</span>
 
@@ -262,11 +262,11 @@
 					document.getElementById("forsale").innerHTML = "The domain name <br><b style='color:#fff'>" + response['dn'] + '</b><br> is for sale'
 				}
 
-				document.getElementById("price").innerHTML = '$' + response['price'] + ' US'
+				document.getElementById("bin").innerHTML = '$' + response['bin'] + ' US'
 
 				if(response.hasOwnProperty('discount')) {
-					document.getElementById("downsell").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
-					document.getElementById("downsell").innerHTML = '$' + response['downsell']  + ' US'
+					document.getElementById("price").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
+					document.getElementById("price").innerHTML = '$' + response['price']  + ' US'
 
 					document.getElementById("discount").style.display = ""
 					document.getElementById("discount").innerHTML = '<br><span class="lnr lnr-tag"></span> ' + response['discount']
