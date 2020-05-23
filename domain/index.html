@@ -113,6 +113,7 @@
 
 								<div class="mt-10" id="offer-box" style="display:none">
 									<input style="border:1px solid rgba(0, 0, 0, 0.125)" type="number" name="offer" placeholder="Enter your offer" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your offer'" class="single-input">
+									<input type="hidden" name="has-offer" value="0">
 									<span style="display:none" id="form-offer-validate"></span>
 								</div>
 
@@ -389,6 +390,7 @@ async function fetchAsyncPOST (url, req_data) {
 document.getElementById("show-offer-box").addEventListener("click", function(event){
 	event.preventDefault()
 	document.getElementsByName("offer")[0].value = ""
+	document.getElementsByName("has-offer")[0].value = 1
   	document.getElementById("offer-box").style.display = ""
   	document.getElementById("show-offer-box").style.display = "none"
   	document.getElementById("hide-offer-box").style.display = ""
@@ -401,6 +403,7 @@ document.getElementById("show-offer-box").addEventListener("click", function(eve
 document.getElementById("hide-offer-box").addEventListener("click", function(event){
 	event.preventDefault()
 	document.getElementsByName("offer")[0].value = ""
+	document.getElementsByName("has-offer")[0].value = 0
   	document.getElementById("offer-box").style.display = "none"
   	document.getElementById("hide-offer-box").style.display = "none"
   	document.getElementById("show-offer-box").style.display = ""
@@ -415,8 +418,19 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 	  var offer = document.getElementsByName('offer')[0].value;
 	  var email = document.getElementsByName('email')[0].value;
 	  var name = document.getElementsByName('name')[0].value;
+	  var has_offer = document.getElementsByName('has-offer')[0].value;
+
+	  console.log(has_offer)
 
 	  var submit = true
+
+   if (has_offer === true and offer == '')  {
+		  submit = false
+			document.getElementById("form-offer-validate").style = "color:red"
+     		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer amount ($ US)'
+	} else {
+	  	document.getElementById("form-offer-validate").style.display = "none"
+	  }
 
 	if(ValidateEmail(email) === false) {
 		  submit = false
