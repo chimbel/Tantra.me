@@ -293,8 +293,6 @@
 
 
 async function fetchAsyncPOST (url, req_data) {
-
-		console.log(req_data);
 	  	  let response = await fetch(url, {
 			  method: 'POST',
 			  headers: {
@@ -310,7 +308,6 @@ async function fetchAsyncPOST (url, req_data) {
 	}
 
 	function handle_domain_error(err) {
-			console.log(err)
 			document.getElementById("status-msg").style.display = ""
 			document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> Our server is down at the moment! Please try again later or contact <b>support@tantra.me</b>'
 			document.getElementById("status-msg").className = 'msg msg-danger  text-center'
@@ -324,7 +321,6 @@ async function fetchAsyncPOST (url, req_data) {
 				}
 
 				var params = getUrlVars();
-				console.log(params)
 				document.getElementById("domain-title").innerHTML = response['dn']
 
 				document.getElementById("status-msg").style.display = "none"
@@ -420,7 +416,6 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 	  var offer = document.getElementsByName('offer')[0].value;
 	  var email = document.getElementsByName('email')[0].value;
 	  var name = document.getElementsByName('name')[0].value;
-	  console.log(offer)
 
 	  var submit = true
 
@@ -487,7 +482,6 @@ function handle_agreement_response(data){
 }
 
 function handle_agreement_error(reason){
-	console.log(reason)
 	document.getElementById('agreement').innerHTML = '<span style="font-size:1.2rem; color:yellow" class="lnr lnr-warning"></span> We are facing a service issue right now, our apologies for the downtime, please try again after some time, you can also write to us - info@tantra.me'
 }
 

@@ -250,7 +250,6 @@
 				}
 
 				var params = getUrlVars();
-				console.log(params)
 				document.getElementById("domain-title").innerHTML = response['dn']
 
 				if(params.hasOwnProperty('rebrand')) {
@@ -303,16 +302,13 @@
 
 					payment: function() {
 						return paypal.request.post(api_url + '/payment-create', create_pay_data).then(function(data) {
-							console.log(data);
 							return data.i;
 						}).catch(err => payment_error());
 					},
 
 					onAuthorize: function(data) {
-						console.log(data)
 						return paypal.request.post(api_url + '/payment-execute', data).then(function(res) {
 							window.location.replace(url + "/transact/?q=" + res['id']);
-							console.log(res)
 						}).catch(err => payment_error());
 					}
 
