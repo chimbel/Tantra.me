@@ -339,7 +339,7 @@ async function fetchAsyncPOST (url, req_data) {
 
 				document.getElementById("hide-offer-box").innerHTML = 'buy now for $' + response['bin']
 				document.getElementById("show-offer-box").innerHTML = 'make offer(min $' + response['min'] + ')'
-				document.getElementById("bin-agreement-terms").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> I agree to purchase this domain for $' + response['price']
+				document.getElementById("bin-agreement-terms").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> I agree to purchase this domain for $' + response['bin']
 				document.getElementById("min-agreement-terms").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> I agree to purchase this domain for the amount'
 
 
