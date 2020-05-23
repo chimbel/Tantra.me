@@ -113,9 +113,12 @@
 
 								<div class="mt-10" id="offer-box" style="display:none">
 									<input style="border:1px solid rgba(0, 0, 0, 0.125)" type="number" name="offer" placeholder="Enter your offer" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your offer'" class="single-input">
-									<input type="hidden" name="has-offer" value="0">
+
 									<span style="display:none" id="form-offer-validate"></span>
 								</div>
+
+								<input type="hidden" name="has-offer" value="0">
+								<input type="hidden" name="domain" value="0">
 
 								<div class="mt-10" id="bin-agreement-terms">
 								</div>
@@ -323,6 +326,7 @@ async function fetchAsyncPOST (url, req_data) {
 
 				var params = getUrlVars();
 				document.getElementById("domain-title").innerHTML = response['dn']
+				document.getElementsByName("domain")[0].value = response['dn']
 
 				document.getElementById("status-msg").style.display = "none"
 				document.getElementById("forsale").innerHTML = "The domain name <br><b style='color:#fff'>" + response['dn'] + '</b><br> is for sale'
@@ -417,6 +421,7 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 	event.preventDefault()
 
 	  var has_offer = document.getElementsByName('has-offer')[0].value;
+	  var domain = document.getElementsByName('domain')[0].value;
 	  var offer = document.getElementsByName('offer')[0].value;
 	  var email = document.getElementsByName('email')[0].value;
 	  var name = document.getElementsByName('name')[0].value;
@@ -456,7 +461,7 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 	  if (submit) {
 
 	fetchAsyncPOST(api_url + '/domain-agreement', {
-	  	'domain' : params['q'],
+	  	'domain' : domain,
 	  	'offer' : offer,
 	  	'email' : email,
 	  	'name' : name,
