@@ -415,21 +415,24 @@ document.getElementById("hide-offer-box").addEventListener("click", function(eve
 
 document.getElementById("agreement-submit").addEventListener("click", function(event){
 	event.preventDefault()
+
+	  var has_offer = document.getElementsByName('has-offer')[0].value;
 	  var offer = document.getElementsByName('offer')[0].value;
 	  var email = document.getElementsByName('email')[0].value;
 	  var name = document.getElementsByName('name')[0].value;
-	  var has_offer = document.getElementsByName('has-offer')[0].value;
 
 	  console.log(has_offer)
+	  console.log(offer)
 
 	  var submit = true
 
-   if (has_offer === 1 && offer === '')  {
+
+	if(name === '') {
 		  submit = false
-			document.getElementById("form-offer-validate").style = "color:red"
-     		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer amount ($ US)'
+			document.getElementById("form-name-validate").style = "color:red"
+     		document.getElementById("form-name-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter your full name'
 	} else {
-	  	document.getElementById("form-offer-validate").style.display = "none"
+	  	document.getElementById("form-name-validate").style.display = "none"
 	  }
 
 	if(ValidateEmail(email) === false) {
@@ -440,12 +443,14 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 	  	document.getElementById("form-email-validate").style.display = "none"
 	  }
 
-	if(name === '') {
+
+
+   if (has_offer == 1 && offer === '')  {
 		  submit = false
-			document.getElementById("form-name-validate").style = "color:red"
-     		document.getElementById("form-name-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter your full name'
+			document.getElementById("form-offer-validate").style = "color:red"
+     		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer amount ($ US)'
 	} else {
-	  	document.getElementById("form-name-validate").style.display = "none"
+	  	document.getElementById("form-offer-validate").style.display = "none"
 	  }
 
 	  if (submit) {
