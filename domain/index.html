@@ -104,17 +104,23 @@
 
 								<div class="mt-10">
 									<input style="border:1px solid rgba(0, 0, 0, 0.125)" type="text" name="name" placeholder="Enter your Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Name'" required="" class="single-input">
-									<span style="display:none" id="form-name-validate"></span>
+									<span style="display:none" id="form-name-validate">
+										<span class="lnr lnr-warning"></span>  Please enter your full name
+									</span>
 								</div>
 								<div class="mt-10">
 									<input style="border:1px solid rgba(0, 0, 0, 0.125)" type="email" name="email" placeholder="Enter your Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Email address'" required="" class="single-input">
-									<span style="display:none" id="form-email-validate"></span>
+									<span style="display:none" id="form-email-validate">
+										<span class="lnr lnr-warning"></span> Please enter a valid email address
+									</span>
 								</div>
 
 								<div class="mt-10" id="offer-box" style="display:none">
 									<input style="border:1px solid rgba(0, 0, 0, 0.125)" type="number" name="offer" placeholder="Enter your offer" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your offer'" class="single-input">
 
-									<span style="display:none" id="form-offer-validate"></span>
+									<span style="display:none" id="form-offer-validate">
+										 Please enter an offer amount ($ US)
+									</span>
 								</div>
 
 								<input type="hidden" name="has-offer" value="0">
@@ -352,6 +358,9 @@ async function fetchAsyncPOST (url, req_data) {
 				document.getElementById("buynow-link").innerHTML = 'Alternatively, purchase ' + response['dn'] + ' from our Marketplace, we accept Paypal'
 
 
+     		document.getElementById("form-offer-validate").style.display = "none"
+     		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer above $' + domain['min'] + ' US'
+
 				document.getElementById("contact").style.display = ""
 
 			    window.dataLayer = window.dataLayer || [];
@@ -435,7 +444,6 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 	if(name === '') {
 		  submit = false
 			document.getElementById("form-name-validate").style = "color:red"
-     		document.getElementById("form-name-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter your full name'
 	} else {
 	  	document.getElementById("form-name-validate").style.display = "none"
 	  }
@@ -443,7 +451,6 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 	if(ValidateEmail(email) === false) {
 		  submit = false
 			document.getElementById("form-email-validate").style = "color:red"
-     		document.getElementById("form-email-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter a valid email address'
 	} else {
 	  	document.getElementById("form-email-validate").style.display = "none"
 	  }
@@ -453,10 +460,9 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
    if (has_offer == 1 && offer === '')  {
 		  submit = false
 			document.getElementById("form-offer-validate").style = "color:red"
-     		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer amount ($ US)'
 	} else {
 	  	document.getElementById("form-offer-validate").style.display = "none"
-	  }
+   }
 
 	  if (submit) {
 
