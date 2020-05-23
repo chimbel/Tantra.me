@@ -330,15 +330,15 @@ async function fetchAsyncPOST (url, req_data) {
 				document.getElementById("bin").innerHTML = '$' + response['bin']  + ' US'
 
 				if(response.hasOwnProperty('discount')) {
-					document.getElementById("bin").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
-					document.getElementById("bin").innerHTML = '$' + response['price']  + ' US'
+					document.getElementById("price").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
+					document.getElementById("price").innerHTML = '$' + response['price']  + ' US'
 
 					document.getElementById("discount").style.display = ""
 					document.getElementById("discount").innerHTML = '<br><span class="lnr lnr-tag"></span> ' + response['discount']
 				}
 
 				document.getElementById("hide-offer-box").innerHTML = 'buy now for $' + response['bin']
-				document.getElementById("show-offer-box").innerHTML = 'make offer - min $' + response['min']
+				document.getElementById("show-offer-box").innerHTML = 'make offer(min $' + response['min'] + ')'
 				document.getElementById("bin-agreement-terms").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> I agree to purchase this domain for $' + response['price']
 				document.getElementById("min-agreement-terms").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> I agree to purchase this domain for the amount'
 
