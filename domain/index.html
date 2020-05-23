@@ -459,11 +459,13 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 
 function handle_agreement_response(data){
 	if (data.hasOwnProperty('owned')) {
+
 		if (data['owned'] == 0) {
-			document.getElementById('domain-info').innerHTML = '<span style="font-size:1.2rem; color:yellow" class="lnr lnr-warning"></span> Unfortunately, This domain name is no longer for sale, you can search for another domain name'
+			document.getElementById('domain-info').innerHTML = '<span style="font-size:1.2rem; color:yellow" class="lnr lnr-checkmark-circle"></span> Thank you for your submission, we will process your request shortly, you can also email us at info@tantra.me'
 		} else if (data['owned'] == 1 || data['owned'] == -1) {
 			document.getElementById('domain-info').innerHTML = '<span style="font-size:1.2rem; color:green" class="lnr lnr-checkmark-circle"></span> Thank you for your submission, you will receive an email from DAN.com domain escrow service to proceed with this transaction, if you do not receive the email in the next 30 minutes, kindly email us at info@tantra.me'
 		}
+
 	} else if (data.hasOwnProperty('post_data_invalid')) {
 
 			dictionary = data['post_data_invalid']
@@ -482,7 +484,7 @@ function handle_agreement_response(data){
 }
 
 function handle_agreement_error(reason){
-	document.getElementById('agreement').innerHTML = '<span style="font-size:1.2rem; color:yellow" class="lnr lnr-warning"></span> We are facing a service issue right now, our apologies for the downtime, please try again after some time, you can also write to us - info@tantra.me'
+	document.getElementById('agreement').innerHTML = '<span style="font-size:1.2rem; color:yellow" class="lnr lnr-checkmark-circle"></span>  Thank you for your submission, we will process your request shortly, you can also email us at info@tantra.me'
 }
 
 
