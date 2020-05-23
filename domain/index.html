@@ -319,7 +319,7 @@ async function fetchAsyncPOST (url, req_data) {
 
 	function handle_domain_error(err) {
 			console.log(err)
-			
+
 			document.getElementById("status-msg").style.display = ""
 			document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> Our server is down at the moment! Please try again later or contact <b>support@tantra.me</b>'
 			document.getElementById("status-msg").className = 'msg msg-danger  text-center'
@@ -361,7 +361,7 @@ async function fetchAsyncPOST (url, req_data) {
 
 
      		document.getElementById("form-offer-validate").style.display = "none"
-     		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer above $' + domain['min'] + ' US'
+     		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer above $' + response['min'] + ' US'
 
 				document.getElementById("contact").style.display = ""
 
