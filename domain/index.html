@@ -424,7 +424,7 @@ document.getElementById("agreement-submit").addEventListener("click", function(e
 
 	  var submit = true
 
-   if (has_offer === true and offer == '')  {
+   if (has_offer === 1 && offer === '')  {
 		  submit = false
 			document.getElementById("form-offer-validate").style = "color:red"
      		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer amount ($ US)'
