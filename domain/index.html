@@ -208,7 +208,7 @@
 
 						<hr>
 
-									<a href="#" id="buynow-link">
+									<a href="#" id="buynow-link" style="display:none">
 										Alternatively, purchase directly from our marketplace using Paypal
  								   	</a>
 								</div>
@@ -344,6 +344,7 @@ async function fetchAsyncPOST (url, req_data) {
 
 				document.getElementsByName("offer")[0].value = response['price']
 
+				document.getElementById("buynow-link").style.display = ""
 				document.getElementById("buynow-link").href = web_url + '/marketplace?q=' + response['dn']
 				document.getElementById("buynow-link").innerHTML = 'Alternatively, purchase ' + response['dn'] + ' from our Marketplace, we accept Paypal'
 

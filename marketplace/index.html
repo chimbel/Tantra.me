@@ -148,8 +148,8 @@
 
 						<hr>
 
-							<a href="#" id="escrow-link">
-								Alternatively, purchase using domain escrow service
+							<a href="#" id="escrow-link" style="display:none">
+								Alternatively, purchase using third-party escrow service
 							</a>
 						</div>
 
@@ -272,6 +272,8 @@
 					document.getElementById("discount").innerHTML = '<br><span class="lnr lnr-tag"></span> ' + response['discount']
 				}
 
+
+				document.getElementById("buynow-link").style.display = ""
 				document.getElementById("escrow-link").href = web_url + '/domain?q=' + params['q']
 				document.getElementById("escrow-link").innerHTML = 'Alternatively, purchase ' + response['dn'] + ' using third-party escrow service'
 
