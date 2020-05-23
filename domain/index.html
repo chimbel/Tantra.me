@@ -318,6 +318,8 @@ async function fetchAsyncPOST (url, req_data) {
 	}
 
 	function handle_domain_error(err) {
+			console.log(err)
+			
 			document.getElementById("status-msg").style.display = ""
 			document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> Our server is down at the moment! Please try again later or contact <b>support@tantra.me</b>'
 			document.getElementById("status-msg").className = 'msg msg-danger  text-center'
