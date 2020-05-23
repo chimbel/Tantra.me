@@ -265,8 +265,8 @@
 				document.getElementById("bin").innerHTML = '$' + response['bin'] + ' US'
 
 				if(response.hasOwnProperty('discount')) {
-					document.getElementById("price").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
-					document.getElementById("price").innerHTML = '$' + response['price']  + ' US'
+					document.getElementById("bin").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
+					document.getElementById("bin").innerHTML = '$' + response['price']  + ' US'
 
 					document.getElementById("discount").style.display = ""
 					document.getElementById("discount").innerHTML = '<br><span class="lnr lnr-tag"></span> ' + response['discount']
