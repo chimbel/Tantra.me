@@ -1,4 +1,4 @@
-//var url = 'http://localhost:8000'
+//var web_url = 'http://localhost:8000'
 //var api_url = 'http://localhost:5000'
 //var mode = 'sandbox'
 

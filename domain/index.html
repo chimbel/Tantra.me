@@ -65,18 +65,17 @@
 
 				<div class="row" id="contact" style="display:none">
 
+
 					<div class="col-md-6">
 
-					<h3 class="forsale" id="forsale" style="color:#fff"></h3>
-					</div>
-					<div class="col-md-6">
 
-						<div class="card card-body bg-white text-center">
+						<div id="domain-info" class="card card-body bg-white text-center">
 
 						<h3 class="card-title" id="domain-title">
 
 						</h3>
-							<p>
+
+					<p>
 
 					  <del>
 						  <span id="downsell" class="downsell" >
@@ -94,20 +93,81 @@
 
 						</span>
 
-							</p>
-								<div id="paypal-button"></div>
 
-						</div>
+					</p>
+
+
+						<form id="agreement" class="card card-body">
+								<div class="mt-10">
+									<span>Fill the form below to initiate an escrow transaction</span>
+									</div>
+
+								<div class="mt-10">
+									<input style="border:1px solid rgba(0, 0, 0, 0.125)" type="text" name="name" placeholder="Enter your Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Name'" required="" class="single-input">
+									<span style="display:none" id="form-name-validate"></span>
+								</div>
+								<div class="mt-10">
+									<input style="border:1px solid rgba(0, 0, 0, 0.125)" type="email" name="email" placeholder="Enter your Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Email address'" required="" class="single-input">
+									<span style="display:none" id="form-email-validate"></span>
+								</div>
+
+								<div class="mt-10" id="offer-box" style="display:none">
+									<input style="border:1px solid rgba(0, 0, 0, 0.125)" min="70" type="number" name="offer" placeholder="Enter your offer (min $70)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your offer (min $70)'" class="single-input">
+									<span style="display:none" id="form-offer-validate"></span>
+								</div>
+
+								<div class="mt-10" id="bin-agreement-terms">
+								</div>
+
+								<div class="mt-10" id="min-agreement-terms" style="display:none">
+								</div>
+
+								<div class="mt-10">
+
+								<a href="#" id="agreement-submit" style="font-size:1.5rem"  class="genric-btn primary-border radius">
+									<span class="lnr lnr-arrow-right"></span> <span id="agreement-action"> Buy Now </span>
+								</a> or
+  								<a href="#" id="show-offer-box">
+										 make offer (min $70)
+ 								   </a>
+									<a href="#" id="hide-offer-box" style="display:none">
+										buy now
+								   </a>
+
+
+
+								</div>
+
+
+
+
+								<div class="mt-10">
+									<span class="lnr lnr-pushpin"></span> We use a trusted third-party domain escrow service, ensuring safety at all stages of a transaction.
+								</div>
+
+
+
+
+					</form>
+
+
+								</div>
+								</div>
+
+										<div class="col-md-6">
+
+					<h3 class="forsale" id="forsale" style="color:#fff"></h3>
 					</div>
 
-				</div>
+								</div>
 			</div>
 		</section>
 
 
 
 
-			<section class="featured-area text-center">
+
+			<section id="how" class="featured-area text-center">
 
 					<h5>
 						How it works
@@ -116,29 +176,42 @@
 
 
 					<div class="row justify-content-md-center">
-						<div class="col-md-3 col-sm-6 col-6">
+
+												<div class="col-md-3 col-sm-6 col-6">
 								<div class="desc">
-									<p><span style="font-size:1.2rem" class="lnr lnr-checkmark-circle"></span> Complete purchase of this domain name using Paypal</p>
+									<p><span style="font-size:1.2rem" class="lnr lnr-keyboard"></span> Enter your details, click Buy Now, Receive email from escrow service</p>
 								</div>
 						</div>
 						<div class="col-md-3 col-sm-6 col-6">
 								<div class="desc">
-									<p><span style="font-size:1.2rem" class="lnr lnr-bubble"></span> A transfer agent will assist with gaining ownership</p>
+									<p><span style="font-size:1.2rem" class="lnr lnr-cart"></span> Follow steps in email, complete payment safely via escrow service</p>
 								</div>
 						</div>
 						<div class="col-md-3 col-sm-6 col-6">
 								<div class="desc">
-									<p><span style="font-size:1.2rem" class="lnr lnr-clock"></span> Start using your new domain name within 48 hours</p>
+									<p><span style="font-size:1.2rem" class="lnr lnr-bubble"></span> An escrow transfer agent will assist with domain transfer</p>
 							</div>
 						</div>
 
+
 						<div class="col-md-4 col-sm-6 col-6">
 									<p>
-																<a href="../transact/">Learn more about our process
+																<a href="../third-party-escrow/">Learn more about third-party escrow transactions
 									</a>
 									</p>
 							</div>
 						</div>
+
+
+<div class="col-12">
+
+
+						<hr>
+
+									<a href="#" id="buynow-link">
+										Alternatively, purchase directly from our marketplace using Paypal
+ 								   	</a>
+								</div>
 
 					</div>
 			</section>
@@ -152,12 +225,13 @@
 				<div class="container">
 
 
-					<div class="footer-social footer-menu">
-							<a href="../">Home</a>
-							<a href="../#about">About Us</a>
-							<a href="../transact/">Transactions</a>
-						</div>
 
+					<div class="footer-social footer-menu">
+														<a href="/"><span class="lnr lnr-home"></span> Home</a>
+							<a href="/#about"><span class="lnr lnr-book"></span> About Us</a>
+							<a href="../transact/"><span class="lnr lnr-store"></span> Marketplace Transactions</a>
+							<a href="../third-party-escrow/"><span class="lnr lnr-briefcase"></span> Escrow Transactions</a>
+					</div>
 
 					<div class="row justify-content-md-center">
 
@@ -194,7 +268,6 @@
 
 
 
-<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1944294-8"></script>
 <script src="../js/config.js"></script>
 <script>
@@ -208,27 +281,42 @@
   }
 
 	async function fetchAsync (url) {
-	  // await response of fetch call
-	  let response = await fetch(url);
+
+
+		  let response = await fetch(url);
+
 	  // only proceed once promise is resolved
 	  let data = await response.json();
 	  // only proceed once second promise is resolved
 	  return data;
 	}
 
-	function handle_error(err) {
+
+async function fetchAsyncPOST (url, req_data) {
+
+		console.log(req_data);
+	  	  let response = await fetch(url, {
+			  method: 'POST',
+			  headers: {
+				'Content-Type': 'application/json;charset=utf-8'
+			  },
+			  body: JSON.stringify(req_data)
+			});
+
+	  // only proceed once promise is resolved
+	  let data = await response.json();
+	  // only proceed once second promise is resolved
+	  return data;
+	}
+
+	function handle_domain_error(err) {
+			console.log(err)
 			document.getElementById("status-msg").style.display = ""
 			document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> Our server is down at the moment! Please try again later or contact <b>support@tantra.me</b>'
 			document.getElementById("status-msg").className = 'msg msg-danger  text-center'
 	}
 
-	function payment_error() {
-		document.getElementById("status-msg").style.display = ""
-		document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> You payment attempt has failed! Please try again later or contact <b>support@tantra.me</b>'
-		document.getElementById("status-msg").className = 'msg msg-danger  text-center'
-	}
-
-	function handle_response(response) {
+	function handle_domain_response(response) {
 			if(response.hasOwnProperty('dn')) {
 
 				if (typeof(Storage) !== "undefined") {
@@ -239,69 +327,34 @@
 				console.log(params)
 				document.getElementById("domain-title").innerHTML = response['dn']
 
-				if(params.hasOwnProperty('rebrand')) {
-					document.getElementById("status-msg").style.display = ""
-					document.getElementById("status-msg").className = 'msg msg-info text-center'
-					document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-chevron-right-circle"></span> On Mar 17 we rebranded to <b>Tantra.me</b> - Tantra Media, we now accept Paypal on our website'
-					document.getElementById("forsale").innerHTML = "The domain name <br><b style='color:#fff'>" + response['dn'] + '</b><br> is for sale'
-				} else {
-					document.getElementById("status-msg").style.display = "none"
-					document.getElementById("forsale").innerHTML = "The domain name <br><b style='color:#fff'>" + response['dn'] + '</b><br> is for sale'
-				}
+				document.getElementById("status-msg").style.display = "none"
+				document.getElementById("forsale").innerHTML = "The domain name <br><b style='color:#fff'>" + response['dn'] + '</b><br> is for sale'
 
-				document.getElementById("price").innerHTML = '$' + response['price']
+
+				document.getElementById("price").innerHTML = '$' + response['price']  + ' US'
 
 				if(response.hasOwnProperty('discount')) {
 					document.getElementById("downsell").style = "font-size: 1.8em; font-weight: 200; color:lightgrey"
-					document.getElementById("downsell").innerHTML = '$' + response['downsell']
+					document.getElementById("downsell").innerHTML = '$' + response['downsell']  + ' US'
 
 					document.getElementById("discount").style.display = ""
 					document.getElementById("discount").innerHTML = '<br><span class="lnr lnr-tag"></span> ' + response['discount']
 				}
 
-				create_pay_data = {
-	                item: response['dn']
-	            }
-				if(params.hasOwnProperty('promo')) {
-					create_pay_data['promo'] = params['promo']
-				}
+				document.getElementById("hide-offer-box").innerHTML = 'buy now for $' + response['price']
+				document.getElementById("bin-agreement-terms").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> I agree to purchase this domain for $' + response['price']
+				document.getElementById("min-agreement-terms").innerHTML = '<span class="lnr lnr-checkmark-circle"></span> I agree to purchase this domain for the amount'
 
-    paypal.Button.render({
 
-		locale: 'en_US',
-		style: {
-		 size: 'responsive',
-		 color: 'gold',
-		 shape: 'rect',
-		 label: 'buynow',
-		 tagline: 'true',
-		 branding: 'true',
-		},
+				document.getElementsByName("offer")[0].value = response['price']
 
-        env: mode,
+				document.getElementById("buynow-link").href = web_url + '/marketplace?q=' + response['dn']
+				document.getElementById("buynow-link").innerHTML = 'Alternatively, purchase ' + response['dn'] + ' from our Marketplace, we accept Paypal'
 
-        commit: true, // Show a 'Pay Now' button
 
-        payment: function() {
-            return paypal.request.post(api_url + '/payment-create', create_pay_data).then(function(data) {
-	            console.log(data);
-                return data.i;
-            }).catch(err => payment_error());
-        },
+				document.getElementById("contact").style.display = ""
 
-        onAuthorize: function(data) {
-	        console.log(data)
-            return paypal.request.post(api_url + '/payment-execute', data).then(function(res) {
-            	window.location.replace(url + "/transact/?q=" + res['id']);
-                console.log(res)
-            }).catch(err => payment_error());
-        }
-
-    }, '#paypal-button');
-
-    				document.getElementById("contact").style.display = ""
-
-				  window.dataLayer = window.dataLayer || [];
+			    window.dataLayer = window.dataLayer || [];
 				  function gtag(){dataLayer.push(arguments);}
 				  gtag('js', new Date());
 				  gtag('config', 'UA-1944294-8');
@@ -316,20 +369,15 @@
 	}
 
 	var params = getUrlVars();
-
 	target = '.dbz'
 	if(params.hasOwnProperty('q') && params['q'] != '' && params['q'].substring(params['q'].length-target.length) != target) {
 
 		final_url = api_url + '/domain?q=' + params['q']
 		document.getElementById("q").value = params['q'];
 
-		if(params.hasOwnProperty('promo')) {
-				final_url = final_url + '&promo=' + params['promo']
-		}
-
 		fetchAsync(final_url)
-				.then(data => handle_response(data))
-				.catch(reason => handle_error(reason))
+				.then(data => handle_domain_response(data))
+				.catch(reason => handle_domain_error(reason))
 	} else {
 		if (typeof(Storage) !== "undefined") {
 			searched_domain = window.localStorage.getItem('domain');
@@ -341,6 +389,122 @@
 		document.getElementById("status-msg").className = 'msg msg-warning'
 		document.getElementById("status-msg").innerHTML = '<span class="lnr lnr-warning"></span> Please type a valid input while searching for a domain.'
 	}
+
+
+document.getElementById("show-offer-box").addEventListener("click", function(event){
+	event.preventDefault()
+		document.getElementsByName("offer")[0].value = ""
+  	document.getElementById("offer-box").style.display = ""
+  	document.getElementById("show-offer-box").style.display = "none"
+  	document.getElementById("hide-offer-box").style.display = ""
+	document.getElementById("bin-agreement-terms").style.display = "none"
+	document.getElementById("min-agreement-terms").style.display = ""
+	document.getElementById("agreement-action").innerHTML = "Make Offer"
+
+});
+
+document.getElementById("hide-offer-box").addEventListener("click", function(event){
+	event.preventDefault()
+	document.getElementsByName("offer")[0].value = '99'
+  	document.getElementById("offer-box").style.display = "none"
+  	document.getElementById("hide-offer-box").style.display = "none"
+  	document.getElementById("show-offer-box").style.display = ""
+	document.getElementById("bin-agreement-terms").style.display = ""
+	document.getElementById("min-agreement-terms").style.display = "none"
+	document.getElementById("agreement-action").innerHTML = "Buy Now"
+});
+
+
+document.getElementById("agreement-submit").addEventListener("click", function(event){
+	event.preventDefault()
+	  var offer = document.getElementsByName('offer')[0].value;
+	  var email = document.getElementsByName('email')[0].value;
+	  var name = document.getElementsByName('name')[0].value;
+	  console.log(offer)
+
+	  var submit = true
+
+	  if (offer < 70) {
+	  submit = false
+		document.getElementById("form-offer-validate").style = "color:red"
+		document.getElementById("form-offer-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter an offer above $70'
+	  } else {
+	  	document.getElementById("form-offer-validate").style.display = "none"
+	  }
+
+	if(ValidateEmail(email) === false) {
+		  submit = false
+			document.getElementById("form-email-validate").style = "color:red"
+     		document.getElementById("form-email-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter a valid email address'
+	} else {
+	  	document.getElementById("form-email-validate").style.display = "none"
+	  }
+
+	if(name === '') {
+		  submit = false
+			document.getElementById("form-name-validate").style = "color:red"
+     		document.getElementById("form-name-validate").innerHTML = '<span class="lnr lnr-warning"></span> Please enter your full name'
+	} else {
+	  	document.getElementById("form-name-validate").style.display = "none"
+	  }
+
+	  if (submit) {
+
+	fetchAsyncPOST(api_url + '/domain-agreement', {
+	  	'domain' : params['q'],
+	  	'offer' : offer,
+	  	'email' : email,
+	  	'name' : name,
+	  }).then(data => handle_agreement_response(data))
+	  	.catch(reason => handle_agreement_error(reason))
+
+	}
+});
+
+
+function handle_agreement_response(data){
+	if (data.hasOwnProperty('owned')) {
+		if (data['owned'] == 0) {
+			document.getElementById('domain-info').innerHTML = '<span style="font-size:1.2rem; color:yellow" class="lnr lnr-warning"></span> Unfortunately, This domain name is no longer for sale, you can search for another domain name'
+		} else if (data['owned'] == 1 || data['owned'] == -1) {
+			document.getElementById('domain-info').innerHTML = '<span style="font-size:1.2rem; color:green" class="lnr lnr-checkmark-circle"></span> Thank you for your submission, you will receive an email from DAN.com domain escrow service to proceed with this transaction, if you do not receive the email in the next 30 minutes, kindly email us at info@tantra.me'
+		}
+	} else if (data.hasOwnProperty('post_data_invalid')) {
+
+			dictionary = data['post_data_invalid']
+			for (var key in dictionary) {
+				if (!dictionary.hasOwnProperty(key)) {
+					continue;
+				}
+				document.getElementById("form-" + key + "-validate").style = "color:red"
+				document.getElementById("form-" + key + "-validate").innerHTML = '<span class="lnr lnr-warning"></span> ' + dictionary[key]
+			}
+
+
+	} else {
+		handle_agreement_error(data)
+	}
+}
+
+function handle_agreement_error(reason){
+	console.log(reason)
+	document.getElementById('agreement').innerHTML = '<span style="font-size:1.2rem; color:yellow" class="lnr lnr-warning"></span> We are facing a service issue right now, our apologies for the downtime, please try again after some time, you can also write to us - info@tantra.me'
+}
+
+
+function isEmpty(value) {
+  return (value == null || value === '');
+}
+
+function ValidateEmail(mail)
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+  {
+    return true
+  }
+    return false
+}
+
 </script>
 	<script src="../js/vendor/jquery-2.2.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
