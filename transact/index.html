@@ -230,12 +230,13 @@
 			<!-- End footer Area -->
 		</div>
 
-		<script>
+<script>
 	if (typeof(Storage) !== "undefined") {
 		searched_domain = window.localStorage.getItem('domain');
-		if (searched_domain !== "null") {
-			document.getElementById("q").value = searched_domain;
+		if (searched_domain === undefined || searched_domain === null) {
 
+		} else {
+					document.getElementById("q").value = searched_domain;
 					document.getElementById("buy-section").style.display = "";
 					document.getElementById("buy").innerHTML = "Purchase " + searched_domain + " from our Marketplace, we accept Paypal";
 					document.getElementById("buy").href = "/domain/?q=" + searched_domain;
@@ -244,7 +245,7 @@
 
 
 	}
-	</script>
+</script>
 
 <script src="../js/config.js"></script>
 		<script>
