@@ -285,6 +285,9 @@
 				if(params.hasOwnProperty('promo')) {
 					create_pay_data['promo'] = params['promo']
 				}
+				if(params.hasOwnProperty('test')) {
+					create_pay_data['test'] = 'test'
+				}
 
 				paypal.Button.render({
 
