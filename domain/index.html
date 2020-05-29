@@ -149,7 +149,7 @@
 						<hr>
 
 							<a href="#" id="escrow-link" style="display:none">
-								Alternatively, purchase using third-party escrow service
+								Alternatively, make an offer
 							</a>
 						</div>
 
@@ -274,8 +274,8 @@
 
 
 				document.getElementById("escrow-link").style.display = ""
-				document.getElementById("escrow-link").href = web_url + '/domain-escrow?q=' + params['q']
-				document.getElementById("escrow-link").innerHTML = 'Alternatively, purchase ' + response['dn'] + ' using third-party escrow service'
+				document.getElementById("escrow-link").href = web_url + '/make-offer?q=' + params['q']
+				document.getElementById("escrow-link").innerHTML = 'Alternatively, make an offer for ' + response['dn'] + ' (min $70 US)'
 
 
 
