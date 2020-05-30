@@ -123,12 +123,12 @@
 
 					</form>
 
+						<a href="#" id="buynow-link" style="display:none">
+										Buy Now using Paypal
+ 								   	</a>
 
 								</div>
 
-						<a href="#" id="buynow-link" style="display:none">
-										Alternatively, purchase directly from our marketplace using Paypal
- 								   	</a>
 
 								</div>
 
@@ -300,7 +300,7 @@ async function fetchAsyncPOST (url, req_data) {
 
 				document.getElementById("buynow-link").style.display = ""
 				document.getElementById("buynow-link").href = web_url + '/domain?q=' + response['dn']
-				document.getElementById("buynow-link").innerHTML = 'Alternatively, purchase ' + response['dn'] + ' for $' + response['bin'] +' US from our Marketplace, we accept Paypal'
+				document.getElementById("buynow-link").innerHTML = 'Buy ' + response['dn'] + ' for $' + response['bin'] +' US from our Marketplace, we accept Paypal'
 
 
 	     		document.getElementById("form-offer-validate").style.display = "none"
