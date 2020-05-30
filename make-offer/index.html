@@ -111,12 +111,9 @@
 
 								<a href="#" id="agreement-submit" style="font-size:1.5rem"  class="genric-btn primary-border radius">
 									<span class="lnr lnr-arrow-right"></span> <span id="agreement-action"> Make Offer </span>
-								</a> or
-
-									<a href="#" id="buynow-link" style="display:none">
-										Buy Now
- 								   	</a>
+								</a>
 								</div>
+
 
 
 
@@ -126,6 +123,9 @@
 
 					</form>
 
+						<a href="#" id="buynow-link" style="display:none">
+							Buy from our Marketplace, we accept Paypal
+						</a>
 
 								</div>
 
@@ -300,7 +300,7 @@ async function fetchAsyncPOST (url, req_data) {
 
 				document.getElementById("buynow-link").style.display = ""
 				document.getElementById("buynow-link").href = web_url + '/domain?q=' + response['dn']
-				document.getElementById("buynow-link").innerHTML = 'Buy Now - $' + response['bin'] +' US, we accept Paypal'
+				document.getElementById("buynow-link").innerHTML = 'Buy from our Marketplace, we accept Paypal - $' + response['bin'] +' US'
 
 
 	     		document.getElementById("form-offer-validate").style.display = "none"
