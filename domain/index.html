@@ -148,7 +148,7 @@
 
 						<hr>
 
-							<a href="#" style="display:none">
+							<a href="#" id="make-offer-link" style="display:none">
 								Make an offer
 							</a>
 						</div>
@@ -274,8 +274,8 @@
 
 				if(response.hasOwnProperty('min')) {
 					document.getElementById("make-offer-section").style.display = ""
-					document.getElementById("make-offer-section").href = web_url + '/make-offer?q=' + params['q']
-					document.getElementById("make-offer-section").innerHTML = 'Make an offer for ' + response['dn'] + ' (min $' + response['min'] + ' US)'
+					document.getElementById("make-offer-link").href = web_url + '/make-offer?q=' + params['q']
+					document.getElementById("make-offer-link").innerHTML = 'Make an offer for ' + response['dn'] + ' (min $' + response['min'] + ' US)'
 				}
 
 				create_pay_data = {
