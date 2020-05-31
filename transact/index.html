@@ -230,23 +230,6 @@
 			<!-- End footer Area -->
 		</div>
 
-<script>
-	if (typeof(Storage) !== "undefined") {
-		searched_domain = window.localStorage.getItem('domain');
-		if (searched_domain === undefined || searched_domain === null) {
-
-		} else {
-					document.getElementById("q").value = searched_domain;
-					document.getElementById("buy-section").style.display = "";
-					document.getElementById("buy").innerHTML = "Purchase " + searched_domain + " from our Marketplace, we accept Paypal";
-					document.getElementById("buy").href = "/domain/?q=" + searched_domain;
-		}
-
-
-
-	}
-</script>
-
 <script src="../js/config.js"></script>
 		<script>
 	function getUrlVars() {
@@ -286,6 +269,19 @@
 				.then(data => handle_response(data))
 				.catch(reason => handle_response(reason))
 	} else {
+
+	if (typeof(Storage) !== "undefined") {
+		searched_domain = window.localStorage.getItem('domain');
+		if (searched_domain === undefined || searched_domain === null) {
+
+		} else {
+					document.getElementById("q").value = searched_domain;
+					document.getElementById("buy-section").style.display = "";
+					document.getElementById("buy").innerHTML = "Purchase " + searched_domain + " from our Marketplace, we accept Paypal";
+					document.getElementById("buy").href = "/domain/?q=" + searched_domain;
+		}
+
+	}
 
 	}
 
