@@ -169,7 +169,7 @@
 							<a href="/"><span class="lnr lnr-home"></span> Home</a>
 							<a href="/#about"><span class="lnr lnr-book"></span> About Us</a>
 							<a href="../transact/"><span class="lnr lnr-store"></span> Marketplace Transactions</a>
-							<a href="../third-party-escrow/"><span class="lnr lnr-briefcase"></span> Escrow Transactions</a>
+
 						</div>
 
 
@@ -275,7 +275,7 @@
 				if(response.hasOwnProperty('min')) {
 					document.getElementById("make-offer-link").href = web_url + '/make-offer?q=' + params['q']
 					document.getElementById("make-offer-link").innerHTML = 'Make an offer for ' + response['dn'] + ' (min $' + response['min'] + ' US)'
-					document.getElementById("make-offer-section").style.display = ""
+					//document.getElementById("make-offer-section").style.display = ""
 				}
 
 				create_pay_data = {
